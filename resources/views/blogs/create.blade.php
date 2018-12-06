@@ -2,7 +2,16 @@
 
 @section('content')
 
-<!-- {!! Form::text('name','value',['class'=> 'form-control']) !!}   -->
+
+	@if(count($errors))
+		<div class="alert alert-danger">
+			@foreach($errors->all() as $error)
+				{{ $error }} <br>
+			@endforeach
+		</div>
+		
+	@endif
+
 
 	{!! Form::open(['url' => 'blogs']) !!}
 
